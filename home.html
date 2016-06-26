@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validator</title>
+<script>
+function validateemail() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        document.write("Not a valid e-mail address");
+        document.write("Please Enter Valid Email id")
+        return false;
+    }
+    else
+    	document.write("Valid e-mail address");
+    	document.write("Form Validated");
+    	return true;
+}
+</script>
+</head>
+
+<body>
+<h3>Form Validator</h3>
+<h3>Enter the details</h3>
+<form name="myForm" action="demo_form.asp" onsubmit="return validateemail();" method="get">
+Name: <input type="text" name="name"></br>
+Email: <input type="text" name="email"></br>
+Phone: <input type="text" name="number"></br>
+Address: <input type="text" name="address" size="25"></textarea></br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
