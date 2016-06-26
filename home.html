@@ -9,11 +9,13 @@ function validateemail() {
     var dotpos = x.lastIndexOf(".");
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
         document.write("Not a valid e-mail address");
+        document.write("<br>");
         document.write("Please Enter Valid Email id")
         return false;
     }
     else
     	document.write("Valid e-mail address");
+    	document.write("<br>");
     	document.write("Form Validated");
     	return true;
 }
@@ -24,9 +26,9 @@ function validateemail() {
 <h3>Form Validator</h3>
 <h3>Enter the details</h3>
 <form name="myForm" action="demo_form.asp" onsubmit="return validateemail();" method="get">
-Name: <input type="text" name="name"></br>
-Email: <input type="text" name="email"></br>
-Phone: <input type="text" name="number"></br>
+Name: <input type="text" name="name" required></br>
+Email: <input type="text" name="email" required></br>
+Phone: <input type="text" name="number" required></br>
 Address: <input type="text" name="address" size="25"></textarea></br>
 <input type="submit" value="Submit">
 </form>
